@@ -1,0 +1,15 @@
+[project]
+name = "sh2404-astrophysics"
+version = "0.1.0"
+description = "Notebook environment for SH2404 astrophysics coursework"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ipykernel",
+    "ipywidgets",
+    "matplotlib",
+    "numpy",
+]
+
+[tool.uv]
+package = false
