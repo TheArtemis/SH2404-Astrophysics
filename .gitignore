@@ -219,3 +219,18 @@ __marimo__/
 
 .vscode/
 dumps/*.pdf
+
+#Report
+report/report.aux
+report/report.log
+report/report.out
+report/report.pdf
+report/report.synctex.gz
+report/report.toc
+report/report.fls
+report/report.fdb_latexmk
+report/report.blg
+report/report.bbl
+report/report.idx
+report/report.ilg
+report/report.ind

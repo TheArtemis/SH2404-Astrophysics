@@ -1,0 +1,114 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+
+\geometry{margin=2.5cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\coursename}
+\rhead{\thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\coursename}{SH2404-Astrophysics}
+\newcommand{\labtitle}{Radiation Transfer Lab}
+\newcommand{\studentname}{Lorenzo Deflorian}
+\newcommand{\reportdate}{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\Large \coursename\par}
+    \vspace{2cm}
+
+    {\huge\bfseries \labtitle\par}
+    \vspace{2.5cm}
+
+    \begin{tabular}{rl}
+        Student name: & \studentname \\
+        Date:         & \reportdate \\
+    \end{tabular}
+
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{Abstract}
+Write your text here.
+
+\section{Introduction}
+Write your text here.
+
+\section{Theory}
+Write your text here.
+
+% Insert equations and derivations here later.
+\begin{equation}
+    \label{eq:placeholder}
+    \text{Write equation here}
+\end{equation}
+
+\section{Preparatory Questions}
+Write your text here.
+
+\section{Notebook Setup / Method}
+Write your text here.
+
+% Insert method details, notebook references, and derivations here later.
+
+\section{Results}
+Write your text here.
+
+% Insert plots or figures here later.
+\begin{figure}[htbp]
+    \centering
+    \fbox{\parbox[c][5cm][c]{0.8\textwidth}{\centering Figure placeholder}}
+    \caption{Write figure caption here.}
+    \label{fig:placeholder}
+\end{figure}
+
+% Insert tables here later.
+\begin{table}[htbp]
+    \centering
+    \caption{Write table caption here.}
+    \label{tab:placeholder}
+    \begin{tabular}{ccc}
+        \toprule
+        Placeholder & Placeholder & Placeholder \\
+        \midrule
+        -- & -- & -- \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Discussion}
+Write your text here.
+
+\section{Conclusion}
+Write your text here.
+
+\appendix
+\section{Appendix}
+Write your text here.
+
+% Insert supplementary plots, equations, derivations, or code references here later.
+
+\end{document}
