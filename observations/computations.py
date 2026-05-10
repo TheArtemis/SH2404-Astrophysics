@@ -11,14 +11,34 @@ class SiderealTime:
         self.minute = (total_seconds % (60 * 60)) // 60
         self.second = total_seconds % 60
 
+    @property
+    def total_seconds(self) -> int:
+        return (self.hour * 60 * 60) + (self.minute * 60) + self.second
+
+    def __add__(self, other: SiderealTime) -> SiderealTime:
+        if not isinstance(other, SiderealTime):
+            return NotImplemented
+
+        return SiderealTime(0, 0, self.total_seconds + other.total_seconds)
+
+    def __sub__(self, other: SiderealTime) -> SiderealTime:
+        if not isinstance(other, SiderealTime):
+            return NotImplemented
+
+        return SiderealTime(0, 0, self.total_seconds - other.total_seconds)
+
     def __str__(self) -> str:
         return f"{self.hour:02d}h {self.minute:02d}m {self.second:02d}s"
+
+    
 
     # March 20 at 12:00:00 UTC
     @staticmethod
     def vernal_equinox(year: int) -> datetime:
         return datetime(year, 3, 20, 12, 0, 0)
 
+# We reuse the SiderealTime class to represent the right ascension
+RightAscension = SiderealTime
 
 def get_sidereal_time(observation_time: datetime) -> SiderealTime:
     # The vernal equinox is on March 20 at 12:00:00 UTC
@@ -34,6 +54,9 @@ def get_sidereal_time(observation_time: datetime) -> SiderealTime:
     # Calculate the sidereal time
     extra_seconds = round(days_since_vernal_equinox * 4 * 60)
     return SiderealTime(0, 0, round(elapsed_seconds) + extra_seconds)
+
+def get_hour_angle(right_ascension: RightAscension) -> SiderealTime:
+    return SiderealTime.vernal_equinox() - right_ascension
 
 
 if __name__ == "__main__":
