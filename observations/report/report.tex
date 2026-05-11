@@ -1,0 +1,373 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+
+\geometry{margin=2.5cm}
+\setlength{\headheight}{13.6pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\newcommand{\coursename}{SH2404 Astrophysics}
+\newcommand{\reporttitle}{Observations and Position Calculations}
+\newcommand{\studentname}{Lorenzo Deflorian}
+\newcommand{\observationdate}{14 February 2026}
+\newcommand{\observationtime}{18:00 local time}
+\newcommand{\observerlatitude}{$59^\circ 21'$ N}
+\newcommand{\observerlongitude}{$18^\circ 00'$ E}
+\newcommand{\placeholder}[1]{\textit{TODO: #1}}
+
+\definecolor{codebackground}{RGB}{248,248,248}
+\definecolor{codeborder}{RGB}{210,210,210}
+\definecolor{codekeyword}{RGB}{0,70,140}
+\definecolor{codecomment}{RGB}{90,110,90}
+
+\lstdefinestyle{reportpython}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    backgroundcolor=\color{codebackground},
+    frame=single,
+    rulecolor=\color{codeborder},
+    framerule=0.4pt,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=0.8em,
+    xrightmargin=0.8em,
+    framexleftmargin=0.8em,
+    framexrightmargin=0.8em
+}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\coursename}
+\rhead{\thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+\pagenumbering{roman}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\Large \coursename\par}
+    \vspace{1.5cm}
+
+    {\huge\bfseries \reporttitle\par}
+    \vspace{2cm}
+
+    \begin{tabular}{rl}
+        Student: & \studentname \\
+        Observation date: & \observationdate \\
+        Observation time: & \observationtime \\
+        Observer latitude: & \observerlatitude \\
+        Observer longitude: & \observerlongitude \\
+        Report date: & \today \\
+    \end{tabular}
+
+    \vfill
+\end{titlepage}
+
+\pagenumbering{arabic}
+\tableofcontents
+\clearpage
+
+\section{Abstract}
+\placeholder{Write 4--6 sentences after the rest of the report is complete. State the aim of the exercise, mention the observation logbook, summarize the sidereal-time/hour-angle method, and give the main visibility result.}
+
+\section{Introduction}
+The purpose of this exercise is to connect direct naked-eye observations of the night sky with simple calculations of object positions. The first part of the work consists of observing the sky on different nights and recording visible constellations, planets, the Moon, weather conditions, and changes over time. The second part estimates which selected astronomical objects should be visible from Stockholm by using right ascension, declination, sidereal time, hour angle, and altitude limits.
+
+\placeholder{Add one short paragraph describing when and where your own observations were made, once the logbook is complete.}
+
+\section{Observation Logbook}
+\label{sec:logbook}
+
+\placeholder{Fill in at least two different observing nights. During one of the nights, include at least two observing occasions separated by a few hours. For each entry, include date, time, observing site, weather, equipment, and anything else relevant.}
+
+\begingroup
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{1.7cm}p{1.3cm}p{2.4cm}p{2.8cm}p{2.0cm}p{3.9cm}}
+    \caption{Logbook for naked-eye observations.}
+    \label{tab:logbook} \\
+    \toprule
+    Date & Time & Site & Weather/sky conditions & Equipment & Notes \\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    Date & Time & Site & Weather/sky conditions & Equipment & Notes \\
+    \midrule
+    \endhead
+
+    \placeholder{date} & \placeholder{time} & \placeholder{site} & \placeholder{conditions} & \placeholder{equipment} & \placeholder{objects and positions} \\
+    \placeholder{date} & \placeholder{time} & \placeholder{site} & \placeholder{conditions} & \placeholder{equipment} & \placeholder{changes from earlier} \\
+    \placeholder{date} & \placeholder{time} & \placeholder{site} & \placeholder{conditions} & \placeholder{equipment} & \placeholder{changes from earlier night} \\
+    \bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Identified Constellations and Objects}
+\placeholder{Describe whether you could see the Big Dipper, Orion, Sirius, Cassiopeia, the Pleiades, and the Milky Way. For each object seen, note its approximate direction and height above the horizon.}
+
+\subsection{Planets and Moon}
+\placeholder{State whether any planets were visible. Include direction, altitude, brightness, and nearby reference stars if known.}
+
+\placeholder{State whether the Moon was visible, its approximate position, and phase. Add or reference a sketch if required by your course instructions.}
+
+\subsection{Changes Between Observations}
+\placeholder{Compare the observations. Mention changes caused by Earth's rotation during one night and changes from one night to another, such as object positions, weather, sky brightness, or Moon phase.}
+
+\section{Preparatory Questions}
+\label{sec:questions}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+    \item If a star has an hour angle of 6 h, it is found in the western sky. It is exactly due west on the horizon only if the star lies on the celestial equator.
+
+    \item When a star is on the observer's meridian, the local sidereal time is equal to the star's right ascension:
+    \[
+        \Theta = \alpha.
+    \]
+
+    \item The hour angle of the vernal equinox is the local sidereal time.
+
+    \item The time since an object passed the local meridian is called the hour angle. If the hour angle is zero, the object is on the local meridian; if it is positive, the object has already passed it.
+
+    \item The sidereal time is $0\mathrm{h}\,0\mathrm{m}\,0\mathrm{s}$ when the vernal equinox is on the observer's meridian.
+
+    \item At noon, the Sun is on the observer's local meridian.
+
+    \item Polaris lies about $0.7^\circ$ from the north celestial pole, so its declination is approximately $+89.3^\circ$.
+
+    \item Stockholm is east of the Swedish time meridian, so stars reach the southern meridian earlier in Stockholm than on the time meridian.
+
+    \item A star reaches its highest point when it crosses the local meridian. For a star with declination $30^\circ$, its maximum altitude from Stockholm is approximately
+    \[
+        h_{\max} = 30^\circ + 90^\circ - 59^\circ 21' = 60^\circ 39'.
+    \]
+    It is then found due south.
+
+    \item Since a star reaches its highest point due south, its lowest point is found due north.
+\end{enumerate}
+
+\section{Calculation Method}
+\label{sec:method}
+
+\subsection{Input Data and Assumptions}
+The observation is planned for \observationdate\ at \observationtime. The observer is assumed to be at latitude \observerlatitude\ and longitude \observerlongitude. The object catalogue used for the computations is shown in Table~\ref{tab:input-objects}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Objects used in the observation-planning calculation.}
+    \label{tab:input-objects}
+    \begin{tabular}{llll}
+        \toprule
+        Object & Type & Right ascension $\alpha$ & Declination $\delta$ \\
+        \midrule
+        Sirius & Star & 6h 46m 16s & $-16^\circ 45'$ \\
+        Mimosa & Star & 12h 49m 14s & $-59^\circ 50'$ \\
+        Albireo & Double star & 19h 31m 43s & $+28^\circ 00'$ \\
+        Ring nebula & Nebula & 18h 54m 30s & $+33^\circ 03'$ \\
+        Andromeda & Galaxy & 0h 44m 05s & $+41^\circ 24'$ \\
+        The Moon & Moon & 19h 40m 42s & $-25^\circ 47'$ \\
+        Venus & Planet & 22h 30m 52s & $-10^\circ 54'$ \\
+        Jupiter & Planet & 7h 09m 48s & $+22^\circ 47'$ \\
+        Mars & Planet & 21h 21m 06s & $+16^\circ 37'$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\placeholder{Add a sentence saying the right ascension and declination values are taken from the lab handout/table in \texttt{observations/markdown/galactic-objects.md}. Mention that the calculations use the simplified approximation from the assignment, not a full precise ephemeris.}
+
+\subsection{Sidereal Time and Hour Angle}
+\label{sec:computations}
+The simplified computation script gives the local sidereal time for the observation as
+\[
+    \Theta = 04\mathrm{h}\,05\mathrm{m}\,00\mathrm{s}.
+\]
+For each object, the hour angle is computed from
+\[
+    H = \Theta - \alpha,
+\]
+where $\Theta$ is the sidereal time and $\alpha$ is the object's right ascension. The result is wrapped into the range from 0 h to 24 h.
+
+The position estimate uses the following approximate direction mapping:
+\[
+    H = 0\mathrm{h} \rightarrow \mathrm{south}, \quad
+    H = 6\mathrm{h} \rightarrow \mathrm{west}, \quad
+    H = 12\mathrm{h} \rightarrow \mathrm{north}, \quad
+    H = 18\mathrm{h} \rightarrow \mathrm{east}.
+\]
+
+For simplicity, the directions between the four exact hour angles are treated as broad compass sectors rather than as exact azimuths. This is kept like this in the code because the purpose of the calculation is only to estimate where to look in the sky, not to compute a precise telescope pointing.
+
+\begin{lstlisting}[style=reportpython]
+def get_direction(sidereal_time: SiderealTime,
+                  right_ascension: RightAscension) -> Direction:
+    hour_angle = get_hour_angle(sidereal_time, right_ascension)
+    # 0h=South, 6h=West, 12h=North and 18h=East
+    if hour_angle.total_seconds == 0:
+        return Direction.SOUTH
+    if hour_angle.total_seconds < 6 * 60 * 60:
+        return Direction.SOUTHWEST
+    if hour_angle.total_seconds == 6 * 60 * 60:
+        return Direction.WEST
+    if hour_angle.total_seconds < 12 * 60 * 60:
+        return Direction.NORTHWEST
+    if hour_angle.total_seconds == 12 * 60 * 60:
+        return Direction.NORTH
+    if hour_angle.total_seconds < 18 * 60 * 60:
+        return Direction.NORTHEAST
+    if hour_angle.total_seconds == 18 * 60 * 60:
+        return Direction.EAST
+    return Direction.SOUTHEAST
+\end{lstlisting}
+
+\subsection{Maximum Altitude}
+\textbf{Task i.} Show that the maximum height of a star above the horizon is
+\[
+    h_{\max} = \delta_* + 90^\circ - \mathrm{lat}.
+\]
+
+\input{hmax-proof.tex}
+
+\subsection{Minimum Altitude}
+\textbf{Task ii.} Use the maximum-height relation to find a relation between the declination of a star and its minimum height above or below the horizon.
+
+\input{hmin-proof.tex}
+
+\subsection{Altitude Limits and Positions}
+\textbf{Task iii.} Using the relations above, the highest and lowest altitude of each object can be computed from
+\[
+    h_{\max} = \delta_* + 90^\circ - \mathrm{lat},
+    \qquad
+    h_{\min} = \mathrm{lat} + \delta_* - 90^\circ.
+\]
+
+\textbf{Task iv.} The hour angle then gives an estimate of where each object is in the sky at 18:00. Objects near the southern half of the sky are more likely to be visible at that time, while objects on the northern half may be below the horizon unless they are circumpolar.
+
+\begingroup
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{table}[htbp]
+    \centering
+    \scriptsize
+    \caption{Computed positions for \observationdate\ at \observationtime.}
+    \label{tab:computed-objects}
+    \begin{tabularx}{\linewidth}{L{1.7cm}L{1.5cm}L{2.0cm}L{1.55cm}L{2.0cm}L{1.35cm}L{1.35cm}L{1.7cm}}
+    \toprule
+    Object & Type & $\alpha$ & $\delta$ & $H$ & $h_{\max}$ & $h_{\min}$ & Direction \\
+    \midrule
+    Sirius & Star & 06h 46m 16s & $-16^\circ 45'$ & 21h 18m 44s & 13.9$^\circ$ & -47.4$^\circ$ & Southeast \\
+    Mimosa & Star & 12h 49m 14s & $-59^\circ 50'$ & 15h 15m 46s & -29.2$^\circ$ & -90.5$^\circ$ & Northeast \\
+    Albireo & Double star & 19h 31m 43s & $+28^\circ 00'$ & 08h 33m 17s & 58.6$^\circ$ & -2.7$^\circ$ & Northwest \\
+    Ring nebula & Nebula & 18h 54m 30s & $+33^\circ 03'$ & 09h 10m 30s & 63.7$^\circ$ & 2.4$^\circ$ & Northwest \\
+    Andromeda & Galaxy & 00h 44m 05s & $+41^\circ 24'$ & 03h 20m 55s & 72.1$^\circ$ & 10.8$^\circ$ & Southwest \\
+    The Moon & Moon & 19h 40m 42s & $-25^\circ 47'$ & 08h 24m 18s & 4.9$^\circ$ & -56.4$^\circ$ & Northwest \\
+    Venus & Planet & 22h 30m 52s & $-10^\circ 54'$ & 05h 34m 08s & 19.7$^\circ$ & -41.5$^\circ$ & Southwest \\
+    Jupiter & Planet & 07h 09m 48s & $+22^\circ 47'$ & 20h 55m 12s & 53.4$^\circ$ & -7.9$^\circ$ & Southeast \\
+    Mars & Planet & 21h 21m 06s & $+16^\circ 37'$ & 06h 43m 54s & 47.3$^\circ$ & -14.0$^\circ$ & Northwest \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+\endgroup
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \caption{Visibility estimates for \observationdate\ at \observationtime.}
+    \label{tab:visibility-estimates}
+    \begin{tabularx}{\linewidth}{L{2.6cm}Y}
+    \toprule
+    Object & Visibility estimate \\
+    \midrule
+    Sirius & Probably visible at this time because it is on the southern half of the sky. \\
+    Mimosa & Never rises above the horizon from this latitude. \\
+    Albireo & Probably not visible at this time, but visible at another time when it is farther south. \\
+    Ring nebula & Visible all night because it is circumpolar. \\
+    Andromeda & Visible all night because it is circumpolar. \\
+    The Moon & Probably not visible at this time, but visible at another time when it is farther south. \\
+    Venus & Probably visible at this time because it is on the southern half of the sky. \\
+    Jupiter & Probably visible at this time because it is on the southern half of the sky. \\
+    Mars & Probably not visible at this time, but visible at another time when it is farther south. \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+The values in Tables~\ref{tab:computed-objects} and~\ref{tab:visibility-estimates} were produced with \texttt{observations/computations.py}. The script represents right ascension and sidereal time in hours, minutes, and seconds, computes $H = \Theta - \alpha$, maps hour angle to an approximate compass direction, and evaluates $h_{\max}$ and $h_{\min}$ from the object's declination and the Stockholm latitude.
+
+\section{Visibility Discussion}
+\placeholder{Discuss the objects one by one or in groups. For example: Sirius, Venus, and Jupiter should be visible at 18:00; Andromeda and the Ring Nebula are circumpolar; Albireo, the Moon, and Mars are not well placed at 18:00 but may be visible later or earlier when closer to the southern sky; Mimosa never rises from this latitude.}
+
+\placeholder{Discuss practical observing limitations: horizon obstruction, twilight, clouds, moonlight, object brightness, telescope/binocular needs, and whether the object is high enough above the horizon for a realistic observation.}
+
+\section{Stellarium Check}
+\label{sec:stellarium}
+
+\placeholder{Use Stellarium with location set to Stockholm. Record the settings used, especially date, time, time zone, and whether atmospheric effects/landscape were enabled.}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+    \item Which stars and planets, if any, are visible?
+
+    \placeholder{Answer from Stellarium. Compare briefly with the computed visibility estimates in Table~\ref{tab:visibility-estimates}.}
+
+    \item Which time does the Sun set?
+
+    \placeholder{Insert Stellarium sunset time for Stockholm on 14 February 2026.}
+
+    \item At what time will Sirius be highest in the sky?
+
+    \placeholder{Insert Stellarium meridian/transit time for Sirius and compare with the hour-angle calculation.}
+
+    \item One hour after sunset, which stars and planets are visible?
+
+    \placeholder{Insert visible stars/planets at one hour after sunset. Note whether twilight or horizon obstruction affects visibility.}
+
+    \item When changing the day one day at a time until one month has passed, what do you observe?
+
+    \placeholder{Describe how the same objects appear farther west at the same clock time on later dates, and note any changes in planet positions.}
+
+    \item If observing Venus on 1 April, what time is best?
+
+    \placeholder{Insert the best observing time from Stellarium and explain whether this is near maximum altitude, after sunset, or before sunrise.}
+\end{enumerate}
+
+\section{Reflection on Own Observations}
+\label{sec:reflection}
+
+\placeholder{Write approximately half a page to one page. Compare the naked-eye observations with the calculations and Stellarium results. Discuss what matched, what differed, and why. Useful points include weather, light pollution, twilight, Moon phase, limited horizon, uncertainty in estimating altitude/direction by eye, and differences between ideal calculations and real observing conditions.}
+
+\section{Conclusion}
+\placeholder{Summarize the most important results in one paragraph: which objects are observable at 18:00, which may be observable at another time during the night, which are not observable from Stockholm, and what your own observations showed.}
+
+\appendix
+\section{Example Manual Calculation}
+\placeholder{Optional but useful: show the calculation for one object, such as Sirius. Include $\Theta$, $\alpha$, $H=\Theta-\alpha$, direction, $h_{\max}$, $h_{\min}$, and the final visibility estimate.}
+
+\section{Computation Script}
+\placeholder{Optional: include selected excerpts from \texttt{observations/computations.py} or describe how to reproduce the table by running the script.}
+
+\end{document}
