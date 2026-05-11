@@ -1,27 +1,21 @@
-At the lowest point of its path, the star is on the opposite side of the celestial pole.
+At the lowest point of its path, the star is on the opposite side of the celestial pole, toward the north.
 
-Using the same idea as before, the angular distance from the zenith is now
-
-\[
-z = \mathrm{lat} + \delta_*
-\]
-
-Since altitude and zenith distance satisfy
+The north celestial pole is at an altitude equal to the observer's latitude, \(\mathrm{lat}\). A star with declination \(\delta_*\) is \(90^\circ - \delta_*\) away from the north celestial pole. Therefore its lowest altitude is
 
 \[
-h_{\min} + z = 90^\circ
-\]
-
-we get
-
-\[
-h_{\min} + (\mathrm{lat} + \delta_*) = 90^\circ
+h_{\min} = \mathrm{lat} - (90^\circ - \delta_*)
 \]
 
 and therefore
 
 \[
-h_{\min} = 90^\circ - \mathrm{lat} - \delta_*
+h_{\min} = \mathrm{lat} + \delta_* - 90^\circ
 \]
 
-If this value is negative, the star is below the horizon at its lowest point.
+The star is circumpolar when
+
+\[
+\mathrm{lat} + \delta_* > 90^\circ
+\]
+
+In that case its lowest point is still above the horizon. If this value is negative, the star is below the horizon at its lowest point.
