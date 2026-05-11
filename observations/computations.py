@@ -1,6 +1,16 @@
 from __future__ import annotations
 from datetime import datetime
+from enum import Enum
 
+class Direction(Enum):
+    NORTH = "north"
+    SOUTH = "south"
+    EAST = "east"
+    WEST = "west"
+    NORTHEAST = "northeast"
+    NORTHWEST = "northwest"
+    SOUTHEAST = "southeast"
+    SOUTHWEST = "southwest"
 
 class SiderealTime:
     def __init__(self, hour: int, minute: int, second: int):
@@ -58,6 +68,31 @@ def get_sidereal_time(observation_time: datetime) -> SiderealTime:
 def get_hour_angle(sidereal_time: SiderealTime, right_ascension: RightAscension) -> SiderealTime:
     return sidereal_time - right_ascension
 
+def get_direction(sidereal_time: SiderealTime, right_ascension: RightAscension) -> Direction:
+    hour_angle = get_hour_angle(sidereal_time, right_ascension)
+    # 0h=South,	6h=West, 12h=North and	18h=East
+    if hour_angle.total_seconds == 0:
+        return Direction.SOUTH
+
+    if hour_angle.total_seconds < 6 * 60 * 60:
+        return Direction.SOUTHWEST
+
+    if hour_angle.total_seconds == 6 * 60 * 60:
+        return Direction.WEST
+
+    if hour_angle.total_seconds < 12 * 60 * 60:
+        return Direction.NORTHWEST
+
+    if hour_angle.total_seconds == 12 * 60 * 60:
+        return Direction.NORTH
+
+    if hour_angle.total_seconds < 18 * 60 * 60:
+        return Direction.NORTHEAST
+
+    if hour_angle.total_seconds == 18 * 60 * 60:
+        return Direction.EAST
+
+    return Direction.SOUTHEAST
 
 if __name__ == "__main__":
     # Vernal equinox
