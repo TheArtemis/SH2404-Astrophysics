@@ -55,8 +55,8 @@ def get_sidereal_time(observation_time: datetime) -> SiderealTime:
     extra_seconds = round(days_since_vernal_equinox * 4 * 60)
     return SiderealTime(0, 0, round(elapsed_seconds) + extra_seconds)
 
-def get_hour_angle(right_ascension: RightAscension) -> SiderealTime:
-    return SiderealTime.vernal_equinox() - right_ascension
+def get_hour_angle(sidereal_time: SiderealTime, right_ascension: RightAscension) -> SiderealTime:
+    return sidereal_time - right_ascension
 
 
 if __name__ == "__main__":
