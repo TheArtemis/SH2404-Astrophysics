@@ -2,6 +2,36 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 
+class Declination:
+    def __init__(self, degree: int, arcminute: int = 0):
+        if not 0 <= arcminute < 60:
+            raise ValueError("arcminute must be between 0 and 59")
+
+        sign = -1 if degree < 0 else 1
+        total_arcminutes = sign * ((abs(degree) * 60) + arcminute)
+        if not -(90 * 60) <= total_arcminutes <= 90 * 60:
+            raise ValueError("declination must be between -90° and 90°")
+
+        self.total_arcminutes = total_arcminutes
+
+    @property
+    def degree(self) -> int:
+        sign = -1 if self.total_arcminutes < 0 else 1
+        return sign * (abs(self.total_arcminutes) // 60)
+
+    @property
+    def arcminute(self) -> int:
+        return abs(self.total_arcminutes) % 60
+
+    @property
+    def decimal_degrees(self) -> float:
+        return self.total_arcminutes / 60
+
+    def __str__(self) -> str:
+        sign = "-" if self.total_arcminutes < 0 else ""
+        return f"{sign}{abs(self.degree)}° {self.arcminute:02d}'"
+
+
 class Direction(Enum):
     NORTH = "north"
     SOUTH = "south"
@@ -93,6 +123,12 @@ def get_direction(sidereal_time: SiderealTime, right_ascension: RightAscension) 
         return Direction.EAST
 
     return Direction.SOUTHEAST
+
+def get_maximum_altitude(declination: Declination, latitude: Declination) -> float:
+    return declination.decimal_degrees + 90 - latitude.decimal_degrees
+
+def get_minimum_altitude(declination: Declination, latitude: Declination) -> float:
+    return 90 - latitude.decimal_degrees - declination.decimal_degrees
 
 if __name__ == "__main__":
     # Vernal equinox
