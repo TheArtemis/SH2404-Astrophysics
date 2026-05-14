@@ -327,32 +327,39 @@ The values in Tables~\ref{tab:computed-objects} and~\ref{tab:visibility-estimate
 \section{Stellarium Check}
 \label{sec:stellarium}
 
-\placeholder{Use Stellarium with location set to Stockholm. Record the settings used, especially date, time, time zone, and whether atmospheric effects/landscape were enabled.}
+As a check on the approximate calculations, I used Stellarium with the observing location set to Stockholm and with both the atmosphere and landscape enabled. These settings make the check more realistic than the simple calculation, since objects very close to the horizon or close to twilight may be difficult or impossible to see even if their computed position is formally above the horizon.
 
 \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
     \item Which stars and planets, if any, are visible?
 
-    \placeholder{Answer from Stellarium. Compare briefly with the computed visibility estimates in Table~\ref{tab:visibility-estimates}.}
+    At 18:00 on 14 February 2026, Stellarium showed Sirius as visible very low above the south-eastern horizon. Jupiter was also visible in the south-east at a medium altitude. Andromeda was visible toward the west at medium altitude, while the Ring Nebula and Albireo were visible toward the north-west, both low in the sky. Orion was visible toward the south-east at medium altitude, Ursa Major was high in the north-east, and Cassiopeia was very high toward the south-west.
+
+    Venus, Mars, and the Moon were below the horizon in the west and were therefore not visible at 18:00. This agrees well with the calculation for Jupiter, Sirius, Andromeda, and the Ring Nebula. The main difference is Venus: the simplified calculation suggested that Venus might be visible in the south-west, but Stellarium showed it just below the western horizon. This difference is reasonable because the calculation only gives a rough sky sector and altitude range, while Stellarium uses the actual ephemeris and horizon geometry.
 
     \item Which time does the Sun set?
 
-    \placeholder{Insert Stellarium sunset time for Stockholm on 14 February 2026.}
+    Stellarium gave the sunset time in Stockholm on 14 February 2026 as approximately 16:40 local time.
 
     \item At what time will Sirius be highest in the sky?
 
-    \placeholder{Insert Stellarium meridian/transit time for Sirius and compare with the hour-angle calculation.}
+    Sirius was highest in the sky at about 21:00 local time. At that time Stellarium gave an azimuth and altitude of approximately
+    \[
+        \mathrm{Az} = 181^\circ 15'07.1'', \qquad
+        \mathrm{Alt} = +13^\circ 56'38.0''.
+    \]
+    This places Sirius almost exactly due south and low above the horizon, as expected for a star with negative declination observed from Stockholm.
 
     \item One hour after sunset, which stars and planets are visible?
 
-    \placeholder{Insert visible stars/planets at one hour after sunset. Note whether twilight or horizon obstruction affects visibility.}
+    One hour after sunset, at about 17:40, Sirius was just above the horizon and away from the strongest twilight. Jupiter was at medium altitude and away from twilight, so it should be visible. Venus was close to the twilight region and near the horizon, making it unlikely to be visible in practice. The Moon and Mars were below the horizon at this time.
 
     \item When changing the day one day at a time until one month has passed, what do you observe?
 
-    \placeholder{Describe how the same objects appear farther west at the same clock time on later dates, and note any changes in planet positions.}
+    Advancing the date one day at a time while keeping the same clock time showed that the stars and constellations shift westward from night to night. Winter constellations such as Orion and Sirius moved closer to setting at the same clock time, while objects that were initially farther east became better placed. The planets did not keep exactly the same pattern as the stars, because their positions change relative to the background constellations.
 
     \item If observing Venus on 1 April, what time is best?
 
-    \placeholder{Insert the best observing time from Stellarium and explain whether this is near maximum altitude, after sunset, or before sunrise.}
+    On 1 April 2026, Venus was highest during the daytime, so the best practical observing time was shortly after sunset before it set. Stellarium indicated that a good time was about 21:15 local time, when Venus was toward the west at an altitude of approximately $+02^\circ 22'08.5''$. This is still very low, so the observation would require a clear western horizon.
 \end{enumerate}
 
 \section{Reflection on Own Observations}
