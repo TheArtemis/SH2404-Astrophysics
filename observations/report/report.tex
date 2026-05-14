@@ -26,11 +26,12 @@
 \newcommand{\coursename}{SH2404 Astrophysics}
 \newcommand{\reporttitle}{Observations and Position Calculations}
 \newcommand{\studentname}{Lorenzo Deflorian}
-\newcommand{\observationdate}{14 February 2026}
-\newcommand{\observationtime}{18:00 local time}
-\newcommand{\observerlatitude}{$59^\circ 21'$ N}
-\newcommand{\observerlongitude}{$18^\circ 00'$ E}
-\newcommand{\placeholder}[1]{\textit{TODO: #1}}
+\newcommand{\observationdate}{1 and 10 May 2026}
+\newcommand{\observationtime}{21:30 and 23:30 local time}
+\newcommand{\calculationdate}{14 February 2026}
+\newcommand{\calculationtime}{18:00 local time}
+\newcommand{\observerlatitude}{$59.3900051^\circ$ N}
+\newcommand{\observerlongitude}{$18.006606^\circ$ E}
 
 \definecolor{codebackground}{RGB}{248,248,248}
 \definecolor{codeborder}{RGB}{210,210,210}
@@ -96,17 +97,17 @@
 \clearpage
 
 \section{Abstract}
-\placeholder{Write 4--6 sentences after the rest of the report is complete. State the aim of the exercise, mention the observation logbook, summarize the sidereal-time/hour-angle method, and give the main visibility result.}
+This report combines naked-eye observations from Ulriksdal Palace park with simple position calculations for selected astronomical objects. The observation logbook covers two observing times on 1 May 2026 and a comparison observation on 10 May 2026. The clearest observed targets were the Moon, Jupiter, Ursa Major, and Cassiopeia, while faint objects such as the Milky Way and the Pleiades were not visible because of twilight, moonlight, light pollution, and a partly obstructed horizon. The calculation part uses sidereal time, hour angle, and declination limits to estimate where selected objects should be in the sky from Stockholm. The calculations and Stellarium check show that Sirius and Jupiter are well placed in the evening calculation case, while Mimosa never rises from Stockholm and several other objects depend strongly on time, horizon obstruction, and sky brightness.
 
 \section{Introduction}
 The purpose of this exercise is to connect direct naked-eye observations of the night sky with simple calculations of object positions. The first part of the work consists of observing the sky on different nights and recording visible constellations, planets, the Moon, weather conditions, and changes over time. The second part estimates which selected astronomical objects should be visible from Stockholm by using right ascension, declination, sidereal time, hour angle, and altitude limits.
 
-\placeholder{Add one short paragraph describing when and where your own observations were made, once the logbook is complete.}
+My own observations were made from the park near Ulriksdal Palace, behind the gardens, at approximately $59.3900051^\circ$ N and $18.006606^\circ$ E. I chose this place because the trees reduced some direct light from nearby streets, while the site was still accessible in the evening. The same trees also blocked the lowest part of the horizon, so objects very close to the horizon were difficult to judge.
 
 \section{Observation Logbook}
 \label{sec:logbook}
 
-\placeholder{Fill in at least two different observing nights. During one of the nights, include at least two observing occasions separated by a few hours. For each entry, include date, time, observing site, weather, equipment, and anything else relevant.}
+Table~\ref{tab:logbook} summarizes the three naked-eye observing sessions. The two observations on 1 May were separated by two hours, which made it possible to compare the apparent motion of the sky during a single night. The observation on 10 May was used as a later comparison under different Moon conditions.
 
 \begingroup
 \setlength{\tabcolsep}{3pt}
@@ -123,23 +124,31 @@ The purpose of this exercise is to connect direct naked-eye observations of the 
     \midrule
     \endhead
 
-    \placeholder{date} & \placeholder{time} & \placeholder{site} & \placeholder{conditions} & \placeholder{equipment} & \placeholder{objects and positions} \\
-    \placeholder{date} & \placeholder{time} & \placeholder{site} & \placeholder{conditions} & \placeholder{equipment} & \placeholder{changes from earlier} \\
-    \placeholder{date} & \placeholder{time} & \placeholder{site} & \placeholder{conditions} & \placeholder{equipment} & \placeholder{changes from earlier night} \\
+    1 May 2026 & 21:30 & Ulriksdal Palace park, $59.3900051^\circ$ N, $18.006606^\circ$ E & Clear sky, bright twilight toward the west and north-west, bright Moon, partly tree-blocked horizon & Naked eye & Big Dipper high toward the north-west/west; Cassiopeia lower toward the north-east; Moon low toward the south-east/east; Jupiter identified in the west/north-west. Orion, Sirius, Pleiades, Milky Way, Venus, and Mars were not confidently visible. \\
+    1 May 2026 & 23:30 & Ulriksdal Palace park, same site & Still clear enough for observation; darker than at 21:30, but bright Moon and light pollution remained important; horizon still partly blocked by trees & Naked eye & Big Dipper still high and clear but shifted westward; Cassiopeia visible toward the north-east/north; Moon higher and closer to the southern sky; Jupiter lower toward the west/north-west. Orion, Sirius, Pleiades, Milky Way, Venus, and Mars were not seen. \\
+    10 May 2026 & 21:30 & Ulriksdal Palace park, same site & Usable early-evening sky with no major clouds blocking the northern sky; strong late-spring twilight; Moon not visible; local light pollution still present & Naked eye & Big Dipper was the clearest constellation and high in the sky; Cassiopeia was lower toward the north-east; Jupiter was visible after sunset. Orion, Sirius, Pleiades, Milky Way, Venus, Mars, and the Moon were not seen. \\
     \bottomrule
 \end{longtable}
 \endgroup
 
 \subsection{Identified Constellations and Objects}
-\placeholder{Describe whether you could see the Big Dipper, Orion, Sirius, Cassiopeia, the Pleiades, and the Milky Way. For each object seen, note its approximate direction and height above the horizon.}
+The Big Dipper, in Ursa Major, was the most reliable constellation marker in all observations. On 1 May at 21:30 it was high toward the north-west/west, and at 23:30 it was still high but had shifted westward. On 10 May it was again high in the sky and was the clearest constellation pattern.
+
+Cassiopeia was visible in all observations, but it was less prominent than the Big Dipper. It was seen lower toward the north-east on 1 May at 21:30, toward the north-east/north at 23:30, and lower toward the north-east on 10 May. The W shape could be recognized, but it was affected by the bright northern sky.
+
+Orion, Sirius, the Pleiades, and the Milky Way were not visible in these observations. Orion and Sirius were no longer well placed in the late spring evening sky, while the Pleiades and the Milky Way were too faint for the sky conditions. Twilight, Stockholm light pollution, moonlight on 1 May, and the partly obstructed horizon all made faint-object observing difficult.
 
 \subsection{Planets and Moon}
-\placeholder{State whether any planets were visible. Include direction, altitude, brightness, and nearby reference stars if known.}
+Jupiter was the only planet that I could identify confidently. On 1 May at 21:30 it appeared as a bright object in the western/north-western sky and became easier to see as the sky darkened. At 23:30 it was still visible but lower toward the west/north-west. On 10 May it was again visible after sunset, although it was lower as the evening continued.
 
-\placeholder{State whether the Moon was visible, its approximate position, and phase. Add or reference a sketch if required by your course instructions.}
+Venus could not be identified confidently. It was expected to be low in the western sky, but the western horizon was bright and partly obstructed. Mars was not visible during any of the observations.
+
+The Moon was visible on 1 May and was the brightest natural source of sky brightness. At 21:30 it was low toward the south-east/east, and by 23:30 it had moved higher and closer to the southern sky. Its brightness reduced the contrast of the surrounding sky and made faint objects difficult to observe. On 10 May I did not see the Moon during the evening observation, and the sky was therefore darker than on 1 May.
 
 \subsection{Changes Between Observations}
-\placeholder{Compare the observations. Mention changes caused by Earth's rotation during one night and changes from one night to another, such as object positions, weather, sky brightness, or Moon phase.}
+The main change during the two hours on 1 May was the apparent westward motion of the sky caused by Earth's rotation. The Big Dipper shifted westward while remaining high and easy to identify. Cassiopeia also shifted slightly, the Moon moved higher and closer to the southern sky, and Jupiter became lower toward the west/north-west.
+
+The comparison with 10 May showed a different sky background. The Moon was not visible during the 10 May evening observation, so the sky was darker than on 1 May. However, the late-spring twilight and local light pollution still prevented faint targets such as the Milky Way and Pleiades from being seen. The same northern constellations remained the most useful reference patterns.
 
 \section{Preparatory Questions}
 \label{sec:questions}
@@ -177,7 +186,7 @@ The purpose of this exercise is to connect direct naked-eye observations of the 
 \label{sec:method}
 
 \subsection{Input Data and Assumptions}
-The observation is planned for \observationdate\ at \observationtime. The observer is assumed to be at latitude \observerlatitude\ and longitude \observerlongitude. The object catalogue used for the computations is shown in Table~\ref{tab:input-objects}.
+The calculation example is planned for \calculationdate\ at \calculationtime. The observer is assumed to be near Stockholm, at latitude \observerlatitude\ and longitude \observerlongitude. The object catalogue used for the computations is shown in Table~\ref{tab:input-objects}.
 
 \begin{table}[htbp]
     \centering
@@ -200,7 +209,7 @@ The observation is planned for \observationdate\ at \observationtime. The observ
     \end{tabular}
 \end{table}
 
-\placeholder{Add a sentence saying the right ascension and declination values are taken from the lab handout/table in \texttt{observations/markdown/galactic-objects.md}. Mention that the calculations use the simplified approximation from the assignment, not a full precise ephemeris.}
+The right ascension and declination values are taken from the lab handout table reproduced in \texttt{observations/markdown/galactic-objects.md}. The calculations use the simplified approximation from the assignment rather than a full precise ephemeris, so the results should be treated as planning estimates.
 
 \subsection{Sidereal Time and Hour Angle}
 \label{sec:computations}
@@ -275,7 +284,7 @@ def get_direction(sidereal_time: SiderealTime,
 \begin{table}[htbp]
     \centering
     \scriptsize
-    \caption{Computed positions for \observationdate\ at \observationtime.}
+    \caption{Computed positions for \calculationdate\ at \calculationtime.}
     \label{tab:computed-objects}
     \begin{tabularx}{\linewidth}{L{1.7cm}L{1.5cm}L{2.0cm}L{1.55cm}L{2.0cm}L{1.35cm}L{1.35cm}L{1.7cm}}
     \toprule
@@ -298,7 +307,7 @@ def get_direction(sidereal_time: SiderealTime,
 \begin{table}[htbp]
     \centering
     \small
-    \caption{Visibility estimates for \observationdate\ at \observationtime.}
+    \caption{Visibility estimates for \calculationdate\ at \calculationtime.}
     \label{tab:visibility-estimates}
     \begin{tabularx}{\linewidth}{L{2.6cm}Y}
     \toprule
@@ -320,9 +329,11 @@ def get_direction(sidereal_time: SiderealTime,
 The values in Tables~\ref{tab:computed-objects} and~\ref{tab:visibility-estimates} were produced with \texttt{observations/computations.py}. The script represents right ascension and sidereal time in hours, minutes, and seconds, computes $H = \Theta - \alpha$, maps hour angle to an approximate compass direction, and evaluates $h_{\max}$ and $h_{\min}$ from the object's declination and the Stockholm latitude.
 
 \section{Visibility Discussion}
-\placeholder{Discuss the objects one by one or in groups. For example: Sirius, Venus, and Jupiter should be visible at 18:00; Andromeda and the Ring Nebula are circumpolar; Albireo, the Moon, and Mars are not well placed at 18:00 but may be visible later or earlier when closer to the southern sky; Mimosa never rises from this latitude.}
+The calculation for \calculationdate\ at \calculationtime\ suggests that Sirius and Jupiter should be on the southern half of the sky and therefore realistically observable if the horizon is clear enough. Sirius is always low from Stockholm, with a maximum altitude of only about $14^\circ$, so it is sensitive to trees, buildings, haze, and twilight. Jupiter is much easier because it is bright and reaches a much larger maximum altitude.
 
-\placeholder{Discuss practical observing limitations: horizon obstruction, twilight, clouds, moonlight, object brightness, telescope/binocular needs, and whether the object is high enough above the horizon for a realistic observation.}
+Andromeda and the Ring Nebula are circumpolar from Stockholm according to the altitude limits, so they do not set below the horizon. In practice, Andromeda is a much better naked-eye candidate than the Ring Nebula, because the Ring Nebula is small and faint and normally requires optical aid. Albireo, Mars, and the Moon are not well placed at the calculation time but can be visible at other times when they are closer to the southern part of the sky. Mimosa has a negative maximum altitude from Stockholm and therefore never rises above the horizon.
+
+The real observations show how strongly visibility depends on observing conditions. Even when an object is geometrically above the horizon, it may not be visible if it is low, close to twilight, hidden by trees, or too faint for a light-polluted sky. The May observations also took place much later in the year than the February calculation case, so the visible constellations differed: Ursa Major and Cassiopeia were easy to identify, while Orion and Sirius were not seen.
 
 \section{Stellarium Check}
 \label{sec:stellarium}
@@ -365,16 +376,43 @@ As a check on the approximate calculations, I used Stellarium with the observing
 \section{Reflection on Own Observations}
 \label{sec:reflection}
 
-\placeholder{Write approximately half a page to one page. Compare the naked-eye observations with the calculations and Stellarium results. Discuss what matched, what differed, and why. Useful points include weather, light pollution, twilight, Moon phase, limited horizon, uncertainty in estimating altitude/direction by eye, and differences between ideal calculations and real observing conditions.}
+The observations made clear that a formal position above the horizon is not enough for a successful naked-eye observation. The calculation and Stellarium sections were mainly for the 14 February planning case, where Sirius, Jupiter, Andromeda, and some northern objects were expected to be visible. My actual observations were in May, so the sky had changed significantly. Orion and Sirius were no longer visible in the evening observations, while Ursa Major and Cassiopeia were the easiest constellations to use as references.
+
+The two observations on 1 May showed the effect of Earth's rotation directly. Over two hours, Jupiter moved lower toward the west/north-west, the Moon moved higher and toward the southern sky, and the Big Dipper shifted westward while staying high. This matched the expected apparent westward motion of the sky. The comparison with 10 May showed that conditions can matter as much as geometry: without the visible Moon, the sky was darker, but late-spring twilight and city light pollution still made faint objects invisible.
+
+The largest practical limitations were the bright sky background and the partly obstructed horizon. Trees helped block some local lights but also made it hard to judge or see objects close to the horizon, especially toward the west. This affected the attempts to identify Venus and may also have contributed to the difficulty of seeing low objects. Estimating direction and altitude by eye was also approximate, so the logbook positions should be treated as broad sky sectors rather than precise measurements.
 
 \section{Conclusion}
-\placeholder{Summarize the most important results in one paragraph: which objects are observable at 18:00, which may be observable at another time during the night, which are not observable from Stockholm, and what your own observations showed.}
+The simplified calculations for Stockholm show that Jupiter and Sirius should be observable in the 14 February evening case, although Sirius remains very low. Andromeda and the Ring Nebula are circumpolar, while Albireo, Mars, and the Moon depend on observing time, and Mimosa is never visible from Stockholm. The May logbook observations showed that the easiest naked-eye targets were Jupiter, the Moon, Ursa Major, and Cassiopeia. Fainter targets, including the Milky Way and the Pleiades, were not visible because of twilight, moonlight, light pollution, and the partly blocked horizon.
 
 \appendix
 \section{Example Manual Calculation}
-\placeholder{Optional but useful: show the calculation for one object, such as Sirius. Include $\Theta$, $\alpha$, $H=\Theta-\alpha$, direction, $h_{\max}$, $h_{\min}$, and the final visibility estimate.}
+For Sirius, the calculation uses
+\[
+    \Theta = 04\mathrm{h}\,05\mathrm{m}\,00\mathrm{s},
+    \qquad
+    \alpha = 06\mathrm{h}\,46\mathrm{m}\,16\mathrm{s}.
+\]
+The hour angle is
+\[
+    H = \Theta - \alpha
+      = 04\mathrm{h}\,05\mathrm{m}\,00\mathrm{s}
+        - 06\mathrm{h}\,46\mathrm{m}\,16\mathrm{s}
+      = -02\mathrm{h}\,41\mathrm{m}\,16\mathrm{s}.
+\]
+Wrapping this into the range 0--24 h gives
+\[
+    H = 21\mathrm{h}\,18\mathrm{m}\,44\mathrm{s}.
+\]
+In the simplified direction mapping this places Sirius in the south-eastern sky. With $\delta=-16^\circ45'$ and $\mathrm{lat}=59^\circ21'$, the altitude limits are approximately
+\[
+    h_{\max}=13.9^\circ,
+    \qquad
+    h_{\min}=-47.4^\circ.
+\]
+Sirius can therefore rise above the horizon from Stockholm, but it always stays low and is sensitive to horizon obstruction and atmospheric conditions.
 
 \section{Computation Script}
-\placeholder{Optional: include selected excerpts from \texttt{observations/computations.py} or describe how to reproduce the table by running the script.}
+The numerical values in the calculation tables were produced with \path{observations/computations.py}. To reproduce the tables, run the script from the repository root with Python. The script defines the object catalogue, computes the sidereal time and hour angle, maps the hour angle to a broad compass direction, and calculates the maximum and minimum altitude limits from the object's declination and the observer latitude.
 
 \end{document}
