@@ -10,7 +10,6 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{array}
-\usepackage{longtable}
 \usepackage{tabularx}
 \usepackage{pdflscape}
 \usepackage{enumitem}
@@ -52,6 +51,7 @@
     keepspaces=true,
     showstringspaces=false,
     tabsize=4,
+    literate={°}{{$^\circ$}}1,
     xleftmargin=0.8em,
     xrightmargin=0.8em,
     framexleftmargin=0.8em,
@@ -107,29 +107,34 @@ My own observations were made from the park near Ulriksdal Palace, behind the ga
 \section{Observation Logbook}
 \label{sec:logbook}
 
-Table~\ref{tab:logbook} summarizes the three naked-eye observing sessions. The two observations on 1 May were separated by two hours, which made it possible to compare the apparent motion of the sky during a single night. The observation on 10 May was used as a later comparison under different Moon conditions.
+The three naked-eye observing sessions are written below as separate notes. The two observations on 1 May were separated by two hours, which made it possible to compare the apparent motion of the sky during a single night. The observation on 10 May was used as a later comparison under different Moon conditions.
 
-\begingroup
-\setlength{\tabcolsep}{3pt}
-\begin{longtable}{p{1.7cm}p{1.3cm}p{2.4cm}p{2.8cm}p{2.0cm}p{3.9cm}}
-    \caption{Logbook for naked-eye observations.}
-    \label{tab:logbook} \\
-    \toprule
-    Date & Time & Site & Weather/sky conditions & Equipment & Notes \\
-    \midrule
-    \endfirsthead
+\subsection*{Observation 1: 1 May 2026, 21:30}
+\textbf{Site:} Ulriksdal Palace park, $59.3900051^\circ$ N, $18.006606^\circ$ E.
 
-    \toprule
-    Date & Time & Site & Weather/sky conditions & Equipment & Notes \\
-    \midrule
-    \endhead
+\textbf{Weather and sky conditions:} The sky was clear, but bright twilight affected the western and north-western sky. The Moon was bright, the sky background was therefore bright, and the lowest part of the horizon was partly blocked by trees.
 
-    1 May 2026 & 21:30 & Ulriksdal Palace park, $59.3900051^\circ$ N, $18.006606^\circ$ E & Clear sky, bright twilight toward the west and north-west, bright Moon, partly tree-blocked horizon & Naked eye & Big Dipper high toward the north-west/west; Cassiopeia lower toward the north-east; Moon low toward the south-east/east; Jupiter identified in the west/north-west. Orion, Sirius, Pleiades, Milky Way, Venus, and Mars were not confidently visible. \\
-    1 May 2026 & 23:30 & Ulriksdal Palace park, same site & Still clear enough for observation; darker than at 21:30, but bright Moon and light pollution remained important; horizon still partly blocked by trees & Naked eye & Big Dipper still high and clear but shifted westward; Cassiopeia visible toward the north-east/north; Moon higher and closer to the southern sky; Jupiter lower toward the west/north-west. Orion, Sirius, Pleiades, Milky Way, Venus, and Mars were not seen. \\
-    10 May 2026 & 21:30 & Ulriksdal Palace park, same site & Usable early-evening sky with no major clouds blocking the northern sky; strong late-spring twilight; Moon not visible; local light pollution still present & Naked eye & Big Dipper was the clearest constellation and high in the sky; Cassiopeia was lower toward the north-east; Jupiter was visible after sunset. Orion, Sirius, Pleiades, Milky Way, Venus, Mars, and the Moon were not seen. \\
-    \bottomrule
-\end{longtable}
-\endgroup
+\textbf{Equipment:} Naked-eye observation.
+
+\textbf{Objects and notes:} The Big Dipper, in Ursa Major, was high toward the north-west/west and easy to identify. Cassiopeia was lower toward the north-east, with its W shape visible but less clear. The Moon was low toward the south-east/east and strongly reduced the contrast of the surrounding sky. Jupiter was visible as a bright object in the west/north-west and became easier to see as the sky darkened. Orion, Sirius, the Pleiades, the Milky Way, Venus, and Mars were not confidently visible.
+
+\subsection*{Observation 2: 1 May 2026, 23:30}
+\textbf{Site:} Ulriksdal Palace park, same site.
+
+\textbf{Weather and sky conditions:} The sky was still clear enough for observation and darker than at 21:30, but the bright Moon and local light pollution still limited faint-object visibility. Trees continued to block the lowest part of the horizon.
+
+\textbf{Equipment:} Naked-eye observation.
+
+\textbf{Objects and notes:} The Big Dipper was still high and clear, but it had shifted westward. Cassiopeia was visible toward the north-east/north and had also shifted slightly. The Moon was higher than before and closer to the southern sky. Jupiter remained visible, but it was lower toward the west/north-west. Orion, Sirius, the Pleiades, the Milky Way, Venus, and Mars were not seen.
+
+\subsection*{Observation 3: 10 May 2026, 21:30}
+\textbf{Site:} Ulriksdal Palace park, same site.
+
+\textbf{Weather and sky conditions:} The early-evening sky was usable, with no major clouds blocking the northern sky. Strong late-spring twilight and local light pollution were still present, but the Moon was not visible during the observation, so the sky was darker than on 1 May.
+
+\textbf{Equipment:} Naked-eye observation.
+
+\textbf{Objects and notes:} The Big Dipper was the clearest constellation and was high in the sky. Cassiopeia was lower toward the north-east and less prominent than Ursa Major. Jupiter was visible after sunset and was one of the easiest bright objects to identify. Orion, Sirius, the Pleiades, the Milky Way, Venus, Mars, and the Moon were not seen.
 
 \subsection{Identified Constellations and Objects}
 The Big Dipper, in Ursa Major, was the most reliable constellation marker in all observations. On 1 May at 21:30 it was high toward the north-west/west, and at 23:30 it was still high but had shifted westward. On 10 May it was again high in the sky and was the clearest constellation pattern.
@@ -209,7 +214,7 @@ The calculation example is planned for \calculationdate\ at \calculationtime. Th
     \end{tabular}
 \end{table}
 
-The right ascension and declination values are taken from the lab handout table reproduced in \texttt{observations/markdown/galactic-objects.md}. The calculations use the simplified approximation from the assignment rather than a full precise ephemeris, so the results should be treated as planning estimates.
+The right ascension and declination values are taken from the lab handout table. The calculations use the simplified approximation from the assignment rather than a full precise ephemeris, so the results should be treated as planning estimates.
 
 \subsection{Sidereal Time and Hour Angle}
 \label{sec:computations}
@@ -326,7 +331,7 @@ def get_direction(sidereal_time: SiderealTime,
     \end{tabularx}
 \end{table}
 
-The values in Tables~\ref{tab:computed-objects} and~\ref{tab:visibility-estimates} were produced with \texttt{observations/computations.py}. The script represents right ascension and sidereal time in hours, minutes, and seconds, computes $H = \Theta - \alpha$, maps hour angle to an approximate compass direction, and evaluates $h_{\max}$ and $h_{\min}$ from the object's declination and the Stockholm latitude.
+The values in Tables~\ref{tab:computed-objects} and~\ref{tab:visibility-estimates} were produced with the computation script included in the appendix. The script represents right ascension and sidereal time in hours, minutes, and seconds, computes $H = \Theta - \alpha$, maps hour angle to an approximate compass direction, and evaluates $h_{\max}$ and $h_{\min}$ from the object's declination and the Stockholm latitude.
 
 \section{Visibility Discussion}
 The calculation for \calculationdate\ at \calculationtime\ suggests that Sirius and Jupiter should be on the southern half of the sky and therefore realistically observable if the horizon is clear enough. Sirius is always low from Stockholm, with a maximum altitude of only about $14^\circ$, so it is sensitive to trees, buildings, haze, and twilight. Jupiter is much easier because it is bright and reaches a much larger maximum altitude.
@@ -413,6 +418,12 @@ In the simplified direction mapping this places Sirius in the south-eastern sky.
 Sirius can therefore rise above the horizon from Stockholm, but it always stays low and is sensitive to horizon obstruction and atmospheric conditions.
 
 \section{Computation Script}
-The numerical values in the calculation tables were produced with \path{observations/computations.py}. To reproduce the tables, run the script from the repository root with Python. The script defines the object catalogue, computes the sidereal time and hour angle, maps the hour angle to a broad compass direction, and calculates the maximum and minimum altitude limits from the object's declination and the observer latitude.
+The numerical values in the calculation tables were produced with the Python script below. The script defines the object catalogue, computes the sidereal time and hour angle, maps the hour angle to a broad compass direction, and calculates the maximum and minimum altitude limits from the object's declination and the observer latitude.
+
+\lstinputlisting[
+    style=reportpython,
+    caption={Full source code used for the computations},
+    label={lst:computations-py}
+]{../computations.py}
 
 \end{document}
