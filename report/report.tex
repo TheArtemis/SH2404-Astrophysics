@@ -9,6 +9,7 @@
 \usepackage{lastpage}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage{grffile}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{caption}
@@ -16,6 +17,7 @@
 \usepackage[hidelinks]{hyperref}
 
 \geometry{margin=2.5cm}
+\graphicspath{{imgs/}}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -51,64 +53,169 @@
 \tableofcontents
 \clearpage
 
-\section{Abstract}
-Write your text here.
-
-\section{Introduction}
-Write your text here.
-
-\section{Theory}
-Write your text here.
-
-% Insert equations and derivations here later.
-\begin{equation}
-    \label{eq:placeholder}
-    \text{Write equation here}
-\end{equation}
-
-\section{Preparatory Questions}
-Write your text here.
-
-\section{Notebook Setup / Method}
-Write your text here.
-
-% Insert method details, notebook references, and derivations here later.
-
 \section{Results}
-Write your text here.
 
-% Insert plots or figures here later.
+\subsection{Setting $\tau_{\mathrm{c}} = 0$ and varying $\tau_{\mathrm{l}}$}
+\label{sec:q1}
+
+With $\tau_{\mathrm{c}} = 0$, the optical depth is almost zero in the line wings, so the outgoing intensity stays close to the incoming intensity $I_0$. Near line centre, $\tau_{\mathrm{l}}$ still gives opacity, so the intensity can change strongly there.
+
+Increasing $\tau_{\mathrm{l}}$ pushes the intensity near line centre toward the source function $S$, while decreasing it keeps the spectrum closer to $I_0$. The line saturates if $\tau_{\mathrm{l}}$ is increased enough. For $\tau_{\mathrm{c}} = 0$ and $\tau_{\mathrm{l}} = 1$, the line centre does not reach $S$ because the actual line-centre optical depth is $\tau_{\mathrm{l}}\phi(0) \approx 0.64$ (with the original damping $= 0.5$), which is not optically thick ($\tau \gg 1$ is needed for saturation).
+
 \begin{figure}[htbp]
     \centering
-    \fbox{\parbox[c][5cm][c]{0.8\textwidth}{\centering Figure placeholder}}
-    \caption{Write figure caption here.}
-    \label{fig:placeholder}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{1/initial setting.png}
+        \caption{Initial setting.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{1/increasing tau.png}
+        \caption{Increasing $\tau_{\mathrm{l}}$.}
+    \end{subfigure}
+    \vskip0.5em
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{1/saturated line.png}
+        \caption{Saturated line.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{1/tau equals 1.png}
+        \caption{$\tau_{\mathrm{l}} = 1$ (not saturated).}
+    \end{subfigure}
+    \caption{Effect of $\tau_{\mathrm{l}}$ with $\tau_{\mathrm{c}} = 0$.}
+    \label{fig:q1}
 \end{figure}
 
-% Insert tables here later.
-\begin{table}[htbp]
-    \centering
-    \caption{Write table caption here.}
-    \label{tab:placeholder}
-    \begin{tabular}{ccc}
-        \toprule
-        Placeholder & Placeholder & Placeholder \\
-        \midrule
-        -- & -- & -- \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+\subsection{Emission line turning into absorption}
+\label{sec:q2}
 
-\section{Discussion}
-Write your text here.
+With $0 < \tau_{\mathrm{l}} < 1$, increasing $I_0$ makes the emission line ``squeeze'' until $I_0$ exceeds the source function; the feature then appears as an absorption line.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{2/the first absorption line.png}
+    \caption{First appearance of an absorption line when $I_0 > S$.}
+    \label{fig:q2}
+\end{figure}
+
+\subsection{Saturated emission and absorption lines}
+\label{sec:q3}
+
+When both emission and absorption lines are strongly saturated, there is no fundamental difference: in both cases the intensity at line centre approaches the source function $S$. Whether the feature looks like emission or absorption depends only on whether $S$ is above or below the background intensity $I_0$.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3/extremlt saturated emission.png}
+        \caption{Extremely saturated emission.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3/extremly saturated absorption.png}
+        \caption{Extremely saturated absorption.}
+    \end{subfigure}
+    \caption{Saturated lines in emission and absorption.}
+    \label{fig:q3}
+\end{figure}
+
+\subsection{Both $\tau_{\mathrm{c}}$ and $\tau_{\mathrm{l}}$ equal to zero}
+\label{sec:q4}
+
+When both $\tau_{\mathrm{c}}$ and $\tau_{\mathrm{l}}$ are zero, $\tau_\nu = 0$ everywhere and the transfer equation gives $I_\nu(D) = I_\nu(0)$: the slab is completely transparent and no spectral line appears.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{4/both taus zero.png}
+    \caption{Transparent slab: $I_\nu(D) = I_\nu(0)$.}
+    \label{fig:q4}
+\end{figure}
+
+\subsection{Non-zero continuum optical depth}
+\label{sec:q5}
+
+For $\tau_{\mathrm{c}} \neq 0$, increasing $\tau_{\mathrm{c}}$ pushes the wings of the spectrum toward the source function $S$, both when $I_0 < S$ and when $I_0 > S$. Far from line centre, $\tau_\nu \approx \tau_{\mathrm{c}}$, so the wings are no longer transparent.
+
+Example with $\tau_{\mathrm{l}} = 5$, $\tau_{\mathrm{c}} = 1$, and $\phi(0) \approx 0.64$:
+
+\paragraph{$I_0 = 10$, $S = 50$ (emission).}
+$I_{\mathrm{wing}} = 50 + (10-50)e^{-1} \approx 35.3$;\quad
+$I_{\mathrm{center}} = 50 + (10-50)e^{-4.2} \approx 49.4$.
+
+\paragraph{$I_0 = 80$, $S = 30$ (absorption).}
+$I_{\mathrm{wing}} = 30 + (80-30)e^{-1} \approx 48.4$;\quad
+$I_{\mathrm{center}} = 30 + (80-30)e^{-4.2} \approx 30.8$.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{5/figure_10_50_1_4.png}
+        \caption{$I_0 = 10$, $S = 50$, $\tau_{\mathrm{c}} = 1$.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{5/figure_80_30_1_4.png}
+        \caption{$I_0 = 80$, $S = 30$, $\tau_{\mathrm{c}} = 1$.}
+    \end{subfigure}
+    \caption{Continuum opacity affecting the line wings.}
+    \label{fig:q5}
+\end{figure}
+
+\subsection{Shape of an unsaturated line}
+\label{sec:q6}
+
+An unsaturated line has approximately the same shape as the line opacity profile. Here that profile is Lorentzian, so the line appears as a smooth peak in emission or a smooth dip in absorption, with wings on both sides. This happens because the optical depth is still small, so the radiation is only weakly changed by the slab; the strongest effect is at line centre and weaker in the wings.
+
+\subsection{$\tau_{\mathrm{c}} = \tau_{\mathrm{l}}$}
+\label{sec:q7}
+
+$\tau_{\mathrm{c}} = \tau_{\mathrm{l}}$ has no special physical meaning by itself. It only means the chosen continuum and line parameters have the same numerical value; the actual line effect still varies with frequency through the line profile $\phi(\nu)$.
+
+\subsection{Optically thick case}
+\label{sec:q8}
+
+In the optically thick emission case, the line centre has very large optical depth, so the emerging intensity becomes almost equal to $S$. The wings are less optically thick and stay closer to $I_0$, giving a strong emission feature. Example parameters: $I_0 = 10$, $S = 50$, $\tau_{\mathrm{c}} = 0$, $\tau_{\mathrm{l}} = 20$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{8/optically thick emission.png}
+    \caption{Optically thick emission line.}
+    \label{fig:q8}
+\end{figure}
+
+\subsection{Damping parameter}
+\label{sec:q9}
+
+For $\tau_{\mathrm{c}} = 0$ and $\tau_{\mathrm{l}} = 1$ with normal damping ($\Gamma_u/4\pi = 0.5$), the line centre does not reach $S_\nu$ because the line-centre optical depth is only about $0.64$, not $\gg 1$. Reducing the damping concentrates opacity into a narrower line core; the line becomes much thinner, the wings weaken, and the centre can approach $S$ over a narrow frequency range. A small damping parameter signifies weak broadening of the transition (narrow natural line width).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{9/t_c 0 and t_1 normal damping.png}
+        \caption{Normal damping.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{9/t_c 0 and t_1 small damping.png}
+        \caption{Small damping.}
+    \end{subfigure}
+    \caption{$\tau_{\mathrm{c}} = 0$, $\tau_{\mathrm{l}} = 1$: effect of damping.}
+    \label{fig:q9}
+\end{figure}
 
 \section{Conclusion}
-Write your text here.
 
-\appendix
-\section{Appendix}
-Write your text here.
-
-% Insert supplementary plots, equations, derivations, or code references here later.
+\subsection{Line formation in five sentences}
+An emission line forms when the source function $S$ inside the slab is larger than the incoming intensity $I_0$, so radiative transfer pushes the emergent intensity upward toward $S$ where the opacity is large. An absorption line forms when $S < I_0$, so the emergent intensity is pulled downward toward $S$ at line centre. If the optical depth is small, the line shape follows the opacity profile (here a Lorentzian). If the optical depth is large, the line centre saturates and $I_\nu(D) \approx S$ regardless of $I_0$. Continuum opacity ($\tau_{\mathrm{c}} \neq 0$) shifts the whole spectrum, including the wings, toward $S$.
 
 \end{document}
